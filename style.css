@@ -1,0 +1,989 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background: #f5efe6;
+
+    color: #29231f;
+
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    position: relative;
+
+    height: 72px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #f5efe6;
+
+    border-bottom: 1px solid #ded3c5;
+
+    z-index: 100;
+}
+
+.logo {
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 38px;
+
+}
+
+.nav-links a {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    position: relative;
+
+}
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #b84c1b;
+
+    transition: 0.3s;
+
+}
+
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+.menu-button {
+
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+.theme-button {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #c9b9a8;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(245,239,230,0.96) 0%,
+            rgba(245,239,230,0.80) 35%,
+            rgba(245,239,230,0.10) 75%
+        ),
+
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7")
+        center / cover;
+
+}
+
+.hero-content {
+
+    max-width: 600px;
+
+}
+
+.eyebrow {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    color: #a54a25;
+
+    margin-bottom: 20px;
+
+}
+
+.hero h1 {
+
+    font-size: clamp(55px, 9vw, 105px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin: 0 0 30px;
+
+}
+
+.hero h1 span {
+
+    color: #b84c1b;
+
+}
+
+.hero-text {
+
+    font-family: Arial, sans-serif;
+
+    max-width: 470px;
+
+    line-height: 1.7;
+
+    color: #625951;
+
+}
+
+.hero-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    background: #b84c1b;
+
+    color: white;
+
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.hero-button:hover {
+
+    background: #813516;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+
+    padding: 90px 7%;
+
+}
+
+.gallery-intro {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+
+}
+
+.gallery-intro h2,
+.about h2 {
+
+    font-size: 55px;
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin: 0;
+
+}
+
+.intro-text {
+
+    max-width: 350px;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.7;
+
+    color: #756a62;
+
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.search-container {
+
+    margin-bottom: 30px;
+
+}
+
+#search {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 16px 20px;
+
+    border: 1px solid #d3c6b7;
+
+    border-radius: 30px;
+
+    background: #fffaf3;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+}
+
+#search:focus {
+
+    border-color: #b84c1b;
+
+}
+
+
+/* ========================================
+   GALLERY
+======================================== */
+
+.gallery {
+
+    text-align: center;
+
+}
+
+.card {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    background: #fffaf3;
+
+    text-align: left;
+
+    vertical-align: top;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(65, 40, 20, 0.08);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(65, 40, 20, 0.16);
+
+}
+
+.image-wrapper {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.card img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s;
+
+}
+
+.card:hover img {
+
+    transform: scale(1.07);
+
+}
+
+.number {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    background: rgba(35, 25, 20, 0.75);
+
+    color: white;
+
+    padding: 7px 10px;
+
+    border-radius: 3px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+}
+
+.like-button {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.9);
+
+    cursor: pointer;
+
+    font-size: 21px;
+
+    transition: 0.3s;
+
+}
+
+.like-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+.like-button.liked {
+
+    color: #b83a1b;
+
+}
+
+.card-content {
+
+    padding: 25px;
+
+}
+
+.category {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #b84c1b;
+
+    font-weight: bold;
+
+}
+
+.card h3 {
+
+    font-size: 25px;
+
+    margin: 9px 0;
+
+}
+
+.card-content p:last-child {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #786d65;
+
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about {
+
+    padding: 100px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background: #33251f;
+
+    color: #f7efe5;
+
+}
+
+.about .eyebrow {
+
+    color: #d9875e;
+
+}
+
+.about-text {
+
+    max-width: 480px;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.8;
+
+    color: #d6c9bd;
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    padding: 30px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #241b17;
+
+    color: #e9ddd0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+}
+
+.footer-logo {
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(25, 18, 14, 0.94);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 1000;
+
+}
+
+.lightbox.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+.lightbox img {
+
+    max-width: 85%;
+
+    max-height: 80vh;
+
+    object-fit: contain;
+
+}
+
+.close-lightbox {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+}
+
+
+/* ========================================
+   BACK TO TOP
+======================================== */
+
+.top-button {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #b84c1b;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 500;
+
+}
+
+.top-button.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* ========================================
+   TOAST
+======================================== */
+
+.toast {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translate(-50%, 30px);
+
+    padding: 14px 22px;
+
+    background: #33251f;
+
+    color: white;
+
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transition: 0.3s;
+
+    z-index: 2000;
+
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+
+}
+
+
+/* ========================================
+   SCROLL ANIMATION
+======================================== */
+
+.hidden-card {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition: 0.7s;
+
+}
+
+.hidden-card.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* ==================================================
+   ⭐ TABLET VIEW — REQUIRED BY ASSIGNMENT
+   772px
+================================================== */
+
+@media screen and (min-width: 772px) {
+
+    .card {
+
+        width: 45%;
+
+        display: inline-block;
+
+        margin: 1.5%;
+
+    }
+
+    .card img {
+
+        max-height: 30vh;
+
+    }
+
+}
+
+
+/* ==================================================
+   ⭐ LARGE SCREEN VIEW — REQUIRED BY ASSIGNMENT
+   998px
+================================================== */
+
+@media screen and (min-width: 998px) {
+
+    .card {
+
+        width: 30%;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 771px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #f5efe6;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
+    }
+
+    .nav-links.mobile-open {
+
+        display: flex;
+
+    }
+
+    .menu-button {
+
+        display: block;
+
+    }
+
+    .hero {
+
+        min-height: 600px;
+
+        padding: 60px 7%;
+
+        background:
+
+            linear-gradient(
+                rgba(245,239,230,0.80),
+                rgba(245,239,230,0.90)
+            ),
+
+            url("https://images.unsplash.com/photo-1500534623283-312aade485b7")
+            center / cover;
+
+    }
+
+    .hero h1 {
+
+        font-size: 58px;
+
+    }
+
+    .gallery-intro {
+
+        display: block;
+
+    }
+
+    .intro-text {
+
+        margin-top: 25px;
+
+    }
+
+    .gallery-intro h2,
+    .about h2 {
+
+        font-size: 45px;
+
+    }
+
+    .about {
+
+        display: block;
+
+    }
+
+    .about-text {
+
+        margin-top: 30px;
+
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark-mode {
+
+    background: #17120f;
+
+    color: #eee2d7;
+
+}
+
+body.dark-mode .navbar {
+
+    background: #17120f;
+
+    border-color: #3b2d25;
+
+}
+
+body.dark-mode .nav-links {
+
+    background: #17120f;
+
+}
+
+body.dark-mode .intro-text {
+
+    color: #b7aaa0;
+
+}
+
+body.dark-mode #search {
+
+    background: #251b16;
+
+    color: white;
+
+    border-color: #514037;
+
+}
+
+body.dark-mode .card {
+
+    background: #241b17;
+
+}
+
+body.dark-mode .card-content p:last-child {
+
+    color: #b8aaa0;
+
+}
+
+body.dark-mode .theme-button {
+
+    color: white;
+
+    border-color: #645348;
+
+}
